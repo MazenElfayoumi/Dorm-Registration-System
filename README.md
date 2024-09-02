@@ -77,7 +77,8 @@ The Dorm Registration System is a web application developed for Galala Universit
 Include screenshots of the application:
 
 - ![Login Page]![login](https://github.com/user-attachments/assets/12643b0c-55ca-4cc5-a2ea-55d061c54200)
-- ![Dashboard](images/dashboard.png)
+- ![Dashboard](![register](https://github.com/user-attachments/assets/b64da466-bf46-4e1e-9168-a453f4a55f97)
+)
 
 ## ERD Diagram
 
