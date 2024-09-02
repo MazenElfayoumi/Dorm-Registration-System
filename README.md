@@ -65,3 +65,27 @@ The Dorm Registration System is a web application developed for Galala Universit
    ```bash
    python app.py
    ```
+## Testing
+
+- Selenium is used for testing.
+- Ensure ChromeDriver is installed and configured properly.
+- Run the Selenium tests from the `tests/` directory to validate the application.
+
+## Screenshots
+
+Include screenshots of the application:
+
+- ![Login Page](images/login-page.png)
+- ![Dashboard](images/dashboard.png)
+
+## ERD Diagram
+
+- ![ERD Diagram](images/erd-diagram.png)
+
+## Contributing
+
+Feel free to submit issues or pull requests. Make sure to follow the coding standards and include tests for new features.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
