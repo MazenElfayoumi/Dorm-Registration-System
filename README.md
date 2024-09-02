@@ -31,35 +31,7 @@ The Dorm Registration System is a web application developed for Galala Universit
 - MySQL Server
 - ChromeDriver (for Selenium)
 
-### Installation
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/dorm-registration-system.git
-   cd dorm-registration-system
-
-2. **Clone the Repository**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
-3. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   
-4. **Set Up the Database**
-   ```bash
-   CREATE DATABASE dorms;
-   mysql -u root -p dorms < database/schema.sql 
-   ```
-5. **Configure the Application**
-   ```bash
-   - SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:your_password@localhost/dorms'
-   ```
-6. **Run the Application**
-   ```bash
-   python app.py
-   ```
 ## Testing
 
 - Selenium is used for testing.
