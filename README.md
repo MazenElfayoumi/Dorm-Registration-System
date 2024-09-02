@@ -27,8 +27,6 @@ The Dorm Registration System is a web application developed for Galala Universit
 - `app.py`: Main application file containing routes and logic.
 - `templates/`: Contains HTML templates for different pages.
 - `static/`: Contains CSS files and other static resources.
-- `tests/`: Contains test scripts using Selenium.
-- `database/`: Contains SQL scripts and database schema.
 
 ### Prerequisites
 
