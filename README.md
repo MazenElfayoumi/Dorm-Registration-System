@@ -1,0 +1,2 @@
+# Dorm Registration System
+ The Dorm Registration System is a web application developed for Galala University to manage student and employee registrations in the university dorms. The system provides functionalities for registering students and employees, searching for records, managing profiles, and handling violations and bookings. The application is built using Flask for the backend, MySQL for the database, and HTML/CSS for the frontend. Selenium is utilized for software testing to ensure smooth operation.
