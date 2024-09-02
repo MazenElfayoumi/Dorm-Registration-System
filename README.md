@@ -30,8 +30,6 @@ The Dorm Registration System is a web application developed for Galala Universit
 - `tests/`: Contains test scripts using Selenium.
 - `database/`: Contains SQL scripts and database schema.
 
-## Setup
-
 ### Prerequisites
 
 - Python 3.x
@@ -47,17 +45,24 @@ The Dorm Registration System is a web application developed for Galala Universit
    cd dorm-registration-system
 
 2. **Clone the Repository**
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
 3. **Install Dependencies**
+   ```bash
    pip install -r requirements.txt
    
 4. **Set Up the Database**
-- CREATE DATABASE dorms;
-- mysql -u root -p dorms < database/schema.sql
-
+```bash
+CREATE DATABASE dorms;
+mysql -u root -p dorms < database/schema.sql 
+```
 5. **Configure the Application**
+```bash
 - SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:your_password@localhost/dorms'
-
+```
 6. **Run the Application**
+   ```bash
+   python app.py
+   ```
