@@ -45,3 +45,13 @@ The Dorm Registration System is a web application developed for Galala Universit
    ```bash
    git clone https://github.com/your-username/dorm-registration-system.git
    cd dorm-registration-system
+
+2. **Clone the Repository**
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+3. **Install Dependencies**
+   pip install -r requirements.txt
+4. **Set Up the Database**
+   CREATE DATABASE dorms;
+   mysql -u root -p dorms < database/schema.sql
