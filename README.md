@@ -39,7 +39,6 @@ The Dorm Registration System is a web application developed for Galala Universit
 ### Installation
 
 1. **Clone the Repository**
-
    ```bash
    git clone https://github.com/your-username/dorm-registration-system.git
    cd dorm-registration-system
@@ -54,14 +53,14 @@ The Dorm Registration System is a web application developed for Galala Universit
    pip install -r requirements.txt
    
 4. **Set Up the Database**
-```bash
-CREATE DATABASE dorms;
-mysql -u root -p dorms < database/schema.sql 
-```
+   ```bash
+   CREATE DATABASE dorms;
+   mysql -u root -p dorms < database/schema.sql 
+   ```
 5. **Configure the Application**
-```bash
-- SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:your_password@localhost/dorms'
-```
+   ```bash
+   - SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:your_password@localhost/dorms'
+   ```
 6. **Run the Application**
    ```bash
    python app.py
