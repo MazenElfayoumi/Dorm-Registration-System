@@ -17,9 +17,6 @@ The Dorm Registration System is a web application developed for Galala Universit
 - **Student Registration:** Add and view student details.
 - **Employee Registration:** Add and view employee details.
 - **Search Functionality:** Search for students and employees by various criteria.
-- **Profile Management:** View and manage user profiles.
-- **Violation Tracking:** Add and search for violations.
-- **Booking Management:** Manage room bookings.
 - **Medical Conditions & GPA Search:** Search students by medical conditions and GPA.
 
 ## Project Structure
