@@ -1,0 +1,114 @@
+# from selenium import webdriver
+# from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.common.by import By
+# import pandas as pd
+
+# # Path to your ChromeDriver executable
+# chrome_driver_path = 'http://127.0.0.1:5000/'
+
+# # Path to your Excel file
+# excel_file_path = 'D:\my_studies\sem_2\Database course\Project\erd\housing project'
+
+# # Create a new WebDriver instance
+# service = Service(chrome_driver_path)
+# driver = webdriver.Chrome(service=service)
+
+# # Open the login page
+# driver.get('http://localhost:5000/')
+
+# # Find the username and password input fields, and submit button
+# username_field = driver.find_element(By.NAME, 'username')
+# password_field = driver.find_element(By.NAME, 'password')
+# submit_button = driver.find_element(By.XPATH, './/input[@type="submit"]')
+
+# # Enter username and password
+# username_field.send_keys('123')
+# password_field.send_keys('123')
+
+# # Wait for the page to load
+# driver.implicitly_wait(5)
+
+# # Click the submit button to login
+# submit_button.click()
+
+# # Open the web page
+# driver.get('http://localhost:5000/addStudent')
+
+# # Read the Excel file into a DataFrame
+# data_frame = pd.read_excel(excel_file_path)
+
+# # Iterate over the rows of the DataFrame
+# for index, row in data_frame.iterrows():
+#     # Extract the values from each row
+#     gu_id = row['gu_id']
+#     national_id = row['national_id']
+#     first_name = row['first_name']
+#     last_name = row['last_name']
+#     date_of_birth = row['date_of_birth']
+#     gender = row['gender']
+#     country = row['country']
+#     city = row['city']
+#     street = row['street']
+#     phone_numbers = row['phone_numbers']
+#     email = row['email']
+#     gpa = row['gpa']
+#     MedicalCondition = row['MedicalCondition']
+#     major = row['major']
+
+#     # Locate the form fields using their respective selectors
+#     gu_id_field = driver.find_element(By.NAME, 'gu_id')
+#     national_id_field = driver.find_element(By.NAME, 'national_id')
+#     first_name_field = driver.find_element(By.NAME, 'first_name')
+#     last_name_field = driver.find_element(By.NAME, 'last_name')
+#     date_of_birth_field = driver.find_element(By.NAME, 'date_of_birth')
+#     gender_field = driver.find_element(By.NAME, 'gender')
+#     country_field = driver.find_element(By.NAME, 'country')
+#     city_field = driver.find_element(By.NAME, 'city')
+#     street_field = driver.find_element(By.NAME, 'street')
+#     phone_numbers_field = driver.find_element(By.NAME, 'phone_numbers')
+#     email_field = driver.find_element(By.NAME, 'email')
+#     gpa_field = driver.find_element(By.NAME, 'gpa')
+#     MedicalCondition_field = driver.find_element(By.NAME, 'MedicalCondition')
+#     major_field = driver.find_element(By.NAME, 'major')
+
+#     # Populate the form fields with the extracted values
+#     gu_id_field.send_keys(str(gu_id))
+#     national_id_field.send_keys(str(national_id))
+#     first_name_field.send_keys(first_name)
+#     last_name_field.send_keys(last_name)
+#     date_of_birth_field.send_keys(str(date_of_birth.strftime('%Y-%m-%d')))
+#     gender_field.send_keys(gender)
+#     country_field.send_keys(country)
+#     city_field.send_keys(city)
+#     street_field.send_keys(street)
+#     phone_numbers_field.send_keys(phone_numbers)
+#     email_field.send_keys(email)
+#     gpa_field.send_keys(str(gpa))
+#     MedicalCondition_field.send_keys(MedicalCondition)
+#     major_field.send_keys(major)
+
+#     # Submit the form
+#     button = driver.find_element(By.XPATH, '//button[@type="submit"]')
+#     driver.execute_script("arguments[0].click();", button)
+
+#     # Wait for the page to load after form submission
+#     driver.implicitly_wait(10)
+
+#     # Clear the form fields for the next iteration
+#     gu_id_field.clear()
+#     national_id_field.clear()
+#     first_name_field.clear()
+#     last_name_field.clear()
+#     date_of_birth_field.clear()
+#     gender_field.clear()
+#     country_field.clear()
+#     city_field.clear()
+#     street_field.clear()
+#     phone_numbers_field.clear()
+#     email_field.clear()
+#     gpa_field.clear()
+#     MedicalCondition_field.clear()
+#     major_field.clear()
+
+# # Close the browser
+# driver.quit()

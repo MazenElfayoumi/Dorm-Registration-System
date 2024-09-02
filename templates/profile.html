@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="student-container" style="margin-top: 60px;">
+    <div class="st-left">
+        <div class="left-head">
+            <div class="profile">
+                <img class="profile-image" src="../static/css/Images/dp.PNG" alt="user photo">
+            </div>
+        </div>
+        <div class="left-body">
+            <p class="field"><strong>gu_id:</strong>{{gu_id}}</p>
+            <p class="field"><strong>major:</strong>{{major}}</p>
+            <p class="field"><strong>national_id:</strong>{{national_id}}</p>
+        </div>
+    </div>
+    <div class="st-right">
+        <p class="field1"><strong>General Information</strong></p>
+        <table class="profile-table">
+            <tr>
+                <th><strong>first_name </strong></th>
+                <td>{{first_name}}</td>
+            </tr>
+            <tr>
+                <th><strong>last_name</strong></th>
+                <td>{{last_name}}</td>
+            </tr>
+            <tr>
+                <th><strong>gender</strong></th>
+                <td>{{gender}}</td>
+            </tr>
+            <tr>
+                <th><strong>Birth Date</strong></th>
+                <td>{{BirthDate}}</td>
+            </tr>
+            <tr>
+                <th><strong>country</strong></th>
+                <td>{{country}}</td>
+            </tr>
+            <tr>
+                <th><strong>city</strong></th>
+                <td>{{city}}</td>
+            </tr>
+            <tr>
+                <th><strong>street</strong></th>
+                <td>{{street}}</td>
+            </tr>
+            <tr>
+                <th><strong>phone_numbers </strong></th>
+                <td>{{phone_numbers}}</td>
+            </tr>
+            <tr>
+                <th><strong>email</strong></th>
+                <td>{{email}}</td>
+            </tr>
+            <tr>
+                <th><strong>gpa </strong></th>
+                <td>{{gpa}}</td>
+            </tr>
+            
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="box" style="margin-top: 60px;">
+    <h1>Regisration</h1>
+    <form method="POST" action="/proccess" enctype="multipart/form-data">
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Personal Details</span>
+                <div class="feilds">
+                    <div class="input-field">
+                        <label>violation ID:</label>
+                        <input type="text" id="violation_id" name="violation_id" placeholder="Enter violation ID..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Violaation name:</label>
+                        <input type="text" name="violation_name" id="violation_name" placeholder="Enter the name of the violation..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>violation type:</label>
+                        <input type="text" name="type" id="type" placeholder="Enter Type of violation..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>violation state:</label>
+                        <input type="text" name="state" id="state" placeholder="Enter the state of the violation..." required>
+                  
+                    <div class="input-field">
+                        <label>violation description:</label>
+                        <input type="text" name="description" id="description" placeholder="Enter the description of the violation..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Date of Birth:</label>
+                        <input type="date" name="date" id="date" required>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label>Student ID:</label>
+                        <input type="text" id="gu_id" name="gu_id" placeholder="Enter the student ID..." required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</div>
+
+<script>
+// Add an event listener for the form submission
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Create a FormData object to store the form data
+  const formData = new FormData(event.target);
+
+  // Use fetch to send a POST request to the Flask route '/save_data' with the form data
+  fetch('/proccess', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      // If the response from the server is okay, display a success message using SweetAlert
+      Swal.fire({
+        icon: 'success',
+        title: 'Data saved successfully!',
+        showConfirmButton: false,
+        timer: 1500,
+        didClose: () => {
+          // After the success message is displayed, refresh the page
+          location.reload();
+        }
+      });
+    } else {
+      // If the response from the server is not okay, display an error message using SweetAlert
+      Swal.fire({
+        icon: 'error',
+        title: 'Error saving data!',
+        text: 'Please try again later.',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  })
+  .catch(error => {
+    // If there is an error with the fetch request, display an error message using SweetAlert
+    Swal.fire({
+      icon: 'error',
+      title: 'Error saving data!',
+      text: 'Please try again later.',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  });
+});
+</script>
+{% endblock %}

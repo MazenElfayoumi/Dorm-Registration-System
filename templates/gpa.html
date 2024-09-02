@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block content %}
+<table style="border: 1px solid black; margin-top: 60px;">
+    <thead>
+        <tr>
+            <th>gpa</th>
+            <th>gu_id</th>
+        </tr>
+    <thead>
+    <tbody>
+        {% for course in student_data %}
+        <tr>
+        <td>{{ course[0] }}</td>  <!-- Medical Condition -->
+        <td>{{ course[1] }}</td>  <!-- GU_ID -->
+        <td>
+            <a href="/accept"><button><i class="fa fa-check-circle"></i></button></a>
+            <a href="/refused"><button><i class="fa fa-trash"></i></button></a>
+          </td>
+        </tr>
+        {% endfor %}
+    </tbody>  
+</table>
+{%endblock%}

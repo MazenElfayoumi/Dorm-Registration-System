@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="box" style="margin-top: 60px;">
+    <h1>Regisration</h1>
+    <form method="POST" action="/submit" enctype="multipart/form-data">
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Personal Details</span>
+                <div class="feilds">
+                    <div class="input-field">
+                        <label>Student ID:</label>
+                        <input type="text" id="gu_id" name="gu_id" placeholder="Enter Student ID..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>National ID:</label>
+                        <input type="text" id="national_id" name="national_id" placeholder="Enter your national ID..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>First Name:</label>
+                        <input type="text" name="first_name" id="first_name" placeholder="Enter student first name..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Last Name:</label>
+                        <input type="text" name="last_name" id="last_name" placeholder="Enter student last name..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Date of Birth:</label>
+                        <input type="text" name="date_of_birth" id="date_of_birth" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Gender:</label>
+                        <input type="text" name="gender" id="gender" placeholder="Enter Student Gender..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Country:</label>
+                        <input type="text" name="country" id="country" placeholder="Enter Student Country..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>City:</label>
+                        <input type="text" name="city" id="city" placeholder="Enter Student City ..." required>
+                    </div>               
+                    <div class="input-field">
+                        <label>Street:</label>
+                        <input type="text" name="street" id="street" placeholder="Enter Student street ..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Phone Numbers:</label>
+                        <input type="text" name="phone_numbers" id="phone_numbers" placeholder="Enter phone number..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Email:</label>
+                        <input type="text" name="email" id="email" placeholder="Enter mail Address..." required>
+                    </div>
+                    <div class="input-field">
+                        <label>Gpa:</label>
+                        <input type="text" name="gpa" id="gpa" placeholder="Enter student GPA..." required>
+                    </div>
+                  </div>
+                  <div class="input-field">
+                      <label>medical condition:</label>
+                      <input type="text" name="MedicalCondition" id="MedicalCondition" placeholder="do you have any medical condition..." required>
+                  </div>
+                    <div class="input-field">
+                        <label>Major:</label>
+                        <input type="text" name="major" id="major" placeholder="Enter student major..." required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</div>
+
+<script>
+// Add an event listener for the form submission
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Create a FormData object to store the form data
+  const formData = new FormData(event.target);
+
+  // Use fetch to send a POST request to the Flask route '/save_data' with the form data
+  fetch('/submit', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      // If the response from the server is okay, display a success message using SweetAlert
+      Swal.fire({
+        icon: 'success',
+        title: 'Data saved successfully!',
+        showConfirmButton: false,
+        timer: 1500,
+        didClose: () => {
+          // After the success message is displayed, refresh the page
+          location.reload();
+        }
+      });
+    } else {
+      // If the response from the server is not okay, display an error message using SweetAlert
+      Swal.fire({
+        icon: 'error',
+        title: 'Error saving data!',
+        text: 'Please try again later.',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  })
+  .catch(error => {
+    // If there is an error with the fetch request, display an error message using SweetAlert
+    Swal.fire({
+      icon: 'error',
+      title: 'Error saving data!',
+      text: 'Please try again later.',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  });
+});
+</script>
+{% endblock %}

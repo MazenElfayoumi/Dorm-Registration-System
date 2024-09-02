@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    {% if custom_css%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/' + custom_css + '.css')}}">
+    {% endif %}
+    <!-- title -->
+    <title>{{ title }}</title>
+</head>
+<body>
+    <!-- start of header -->
+    <header>
+        <div class="header-left"><a href="#" class="logo"><img src="../static/css/Images/logo.png" alt="Logo" width="250px"></a></div>
+        <div class="header-right">
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+        <button class="onclick" onclick="toggleDiv()"><i class="fa fa-bars"></i></button>
+</header>
+<div class="responsive" id="responisve">
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Schedule</a></li>
+            <li><a href="#">My Courses</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </div>
+</div>
+    <!-- body -->
+    {% block content %} 
+    {% endblock %}
+    <!-- start of footer -->
+    <footer>
+        <div class="container">
+            <div class="box">
+                <div class="connect">Connect</div>
+                <div class="us">With Us</div>
+                <p>Explore..Like..Follow..</p>
+            </div>
+            <div class="gu_links">
+                <ul>
+                    <li><a href="https://www.facebook.com/Galalaofficial/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/galalauniofficial/" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="https://twitter.com/galala_uni" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <p>©️ 2022 Galala University protected. All rights reserved.</p>
+    </footer>
+    <!-- script -->
+    <script>
+        function toggleDiv() {
+            const responisve = document.getElementById("responisve");
+          
+            if (responisve.style.display === "none") {
+                responisve.style.display = "block";
+            } else {
+                responisve.style.display = "none";
+            }
+        }          
+    </script>
+</body>
+</html>

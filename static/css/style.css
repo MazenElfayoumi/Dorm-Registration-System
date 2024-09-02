@@ -1,0 +1,284 @@
+:root {
+	--main-color: #99bf3f;
+	--transparent-color: rgb(255 255 255 / 70%);;
+	--hover: #2b3572;
+	--font:  'Philosopher', sans-serif;
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html{
+	scroll-behavior: smooth;
+}
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  width: 100%;
+  background-color: white;
+}
+a{
+	text-decoration: none;
+	font-family: var(--font);
+}
+ul{
+	list-style: none;
+}
+
+@media (min-width: 992px){
+	.container {
+    width: 970px;
+	}
+}
+@media (min-width: 768px){
+	.container {
+    width: 750px;
+	}
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+/* Start of header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--hover);
+	color: var(--main-color);
+}
+  
+.logo {
+	display: block;
+	width: 100%;
+	max-width: 150px;
+}
+  
+nav {
+	display: flex;
+	margin-right: 10px;
+}
+  
+nav ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+  
+nav li {
+	margin-left: 20px;
+}
+  
+nav a {
+	color: var(--main-color);
+	text-decoration: none;
+	font-size: 20px;
+	display: block;
+}
+
+nav a:hover{
+	color: var(--hover);
+	background-color: var(--main-color);
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	border: 1px solid whitesmoke;
+	border-radius: 5px;
+	padding: 7px;
+}
+  
+.dropbtn {
+	background-color: transparent;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+  
+.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: #f9f9f9;
+	min-width: 160px;
+}
+  
+.dropdown-content a {
+	color: #333;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+  
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.onclick{
+	margin: 7px;
+	font-size: 40px;
+	padding: 10px;
+	cursor: pointer;
+	display: none;
+}
+
+.responsive{
+	z-index: 10;
+	padding: 10px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    background-color: var(--hover);
+	display: none;
+}
+ 
+@media screen and (max-width: 768px) {
+	header .logo{
+		max-width: 150px;
+	}
+
+	header .logo > img{
+		max-width: 190px;
+	}
+	
+	header .dropdown{
+		display: none;
+	}
+
+	header nav{
+		display: none;
+	}
+	
+	.onclick{
+		display: block;
+	}
+
+	.responsive .dropdown{
+		margin: 20px;
+		display: flex;
+    	justify-content: center;
+	}
+
+	.menu > ul{
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+    	justify-content: center;
+	}
+
+	.menu ul > li{
+		background-color: #99bf3f;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+	}
+
+	.menu ul > li > a{
+		font-size: 20px;
+		color: white;
+	}
+}
+
+/* start of footer */
+footer {
+    /* position: fixed;
+	left: 0;	
+	bottom: 0; */
+	width: 100%;
+    background-color: var(--hover);
+    margin-top: var(--main-padding-top);
+	padding-top: 10px;
+    text-align: center;
+}
+
+footer .container{
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+footer .container .connect{
+    color: var(--main-color);
+    font-size: 44px;
+    font-weight: 900;
+    padding: 5px;
+}
+
+footer .container .us{
+    color: var(--main-color);
+    font-size: 44px;
+    font-weight: 900;
+    padding: 5px;
+}
+
+footer .container p{
+    color: var(--second-color);
+    font-size: large;
+    font-weight: 600;
+}
+
+footer .gu_links{
+    margin: 20px;
+}
+
+footer .gu_links ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 788px) {
+    footer .gu_links ul{
+        flex-direction: column;
+    }
+}
+
+footer .gu_links ul > li{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+footer .gu_links ul > li > a > i{
+    font-size: 32px;
+    color: white;
+}
+
+footer .gu_links ul > li:first-child{
+    background-color: #4267B2;
+}
+
+footer .gu_links ul > li:nth-child(2){
+    background-color: #25D366;
+}
+
+footer .gu_links ul > li:nth-child(3){
+    background-color: #00acee;
+}
+
+footer p{
+	text-align: center;
+    margin: 15px;
+	color: whitesmoke
+}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<form method="GET" action="{{ url_for('SearchStudent') }}" style="margin-top: 60px;">
+    <input type="text" name="q" value="{{ search_query|default('Search for Student...') }}" placeholder="Search for student..." required>
+    <i class="fa fa-search"></i>
+</form>
+<table style="border: 1px solid black">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>National Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Street</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Employee_type</th>
+        <th>Employee Faculty</th>
+        <th>Payment Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for course in Employee_data %}
+      <tr>
+        <td>{{ course[0] }}</td>
+        <td>{{ course[1] }}</td>
+        <td>{{ course[2] }}</td>
+        <td>{{ course[3] }}</td>
+        <td>{{ course[4] }}</td>
+        <td>{{ course[5] }}</td>
+        <td>{{ course[6] }}</td>
+        <td>{{ course[7] }}</td>
+        <td>{{ course[8] }}</td>
+        <td>{{ course[9] }}</td>
+        <td>{{ course[10] }}</td>
+        <td>{{ course[11] }}</td>
+        <td>{{ course[12] }}</td>
+        <td>{{ course[13] }}</td>
+        <td>{{ course[14] }}</td>
+        <td>{{ course[15] }}</td>
+        <td>{{ course[16] }}</td>
+        <td>{{ course[17] }}</td>
+        <td>
+          <a href=""><button><i class="fa fa-pencil-square"></i></button></a>
+          <a href=""><button><i class="fa fa-trash"></i></button></a>
+        </td>  
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>  
+
+{% endblock %}
